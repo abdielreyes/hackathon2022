@@ -14,50 +14,62 @@
     }],
   "promos": [
     {
+      "id" : "1",
       "rarity": "1",
       "desc": "Tarjeta de regalo Uber"
     },
     {
+      "id" : "2",
       "rarity": "1",
       "desc": "1 Mensualidad sin costo de seguro moto/auto"
     },
     {
+      "id" : "3",
       "rarity": "1",
       "desc": "Una compra a MSI gratis"
     },
     {
+      "id" : "4",
       "rarity": "1",
       "desc": "Un mes sin promedio mensual minimo en debito"
     },
     {
+      "id" : "5",
       "rarity": "1",
       "desc": "1 mensualidad sin costo de seguro medico"
     },
     {
+      "id" : "6",
       "rarity": "2",
       "desc": "Incremento del 5% a tu linea de credito"
     },
     {
+      "id" : "7",
       "rarity": "2",
       "desc": "Descuento en tu tasa de interes por un anio"
     },
     {
+      "id" : "8",
       "rarity": "3",
       "desc": "1 anualidad gratuita en tu tarjeta de credito"
     },
     {
+      "id" : "9",
       "rarity": "3",
       "desc": "Boletos futbol MTY"
     },
     {
+      "id" : "10",
       "rarity": "3",
       "desc": "1 playera de los Rayados de MTY"
     },
     {
+      "id" : "11",
       "rarity": "3",
       "desc": "Incremento de 10% en tu linea de credito"
     },
     {
+      "id" : "12",
       "rarity": "3",
       "desc": "Prestamo personal con tasa preferencial"
     }

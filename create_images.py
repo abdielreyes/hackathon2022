@@ -1,6 +1,4 @@
 from PIL import Image
-from IPython.display import display 
-import random
 import json
 import os
 
@@ -51,8 +49,11 @@ for item in all_images:
 
 print(all_images)
 
+METADATA_FILE_NAME ='./metadata/all-traits.json'
+with open(METADATA_FILE_NAME, 'w') as outfile:
+    json.dump(all_images, outfile, indent=4)
+
 # Create images
-os.mkdir(f'./images')
 for item in all_images:
 
     im1 = Image.open(f'./scripts/face_parts/face/{head_files[item["Head"]]}.png').convert('RGBA')
@@ -65,3 +66,8 @@ for item in all_images:
     rgb_im = com2.convert('RGB')
     file_name = str(item["tokenId"]) + ".png"
     rgb_im.save("./images/" + file_name)
+
+# Dump metadata
+METADATA_FILE_NAME ='./metadata/all-traits.json'
+with open(METADATA_FILE_NAME, 'w') as outfile:
+    json.dump(all_images, outfile, indent=4)

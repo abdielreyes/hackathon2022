@@ -16,7 +16,7 @@ export default function Collection() {
 			</section>
 			<section className='bg-white-1'>
 				<div className='bg-white-2 m-5 drop-shadow-md'>
-				<Subtitle label='Nombre del NFT' />
+					<Subtitle label='Nombre del NFT' />
 				</div>
 			</section>
 		</div>

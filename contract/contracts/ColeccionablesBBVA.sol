@@ -20,11 +20,21 @@ contract ColeccionablesBBVA is ERC721, ERC721URIStorage, Ownable {
 
     Collectible [] public collectibles;
 
+    string private BASE_URI = 'https://collectiblesBBVA.com/metadata/';
+
     constructor() ERC721("ColleccionablesBBVA", "cBBVA") {}
     
     event NewCollectible (address indexed owner, uint256 id);
+    event ReedemedCollectible (uint256 id);
 
-    function createCollectible(uint256 _promoID, address _owner) external {
+    function redeem(uint256 _tokenId) external {
+        Collectible storage collectible = collectibles[_tokenId];
+        require(!collectible.reedemed, "Collectible already reedemed");
+        emit ReedemedCollectible(_tokenId);
+        collectible.reedemed=true;
+    }
+
+    function createCollectible(uint256 _promoID, address _owner) external onlyOwner{
         Collectible memory collectible = Collectible(COUNTER, _promoID, false, false);
         collectibles.push(collectible);
         _safeMint(_owner, COUNTER);
@@ -32,7 +42,7 @@ contract ColeccionablesBBVA is ERC721, ERC721URIStorage, Ownable {
         COUNTER++;
     }
     
-    function tokensOfOwner(address _owner) external view returns (Collectible[] memory) {
+    function tokensOfOwner(address _owner) external view onlyOwner returns (Collectible[] memory) {
         uint256 tokenCount = balanceOf(_owner);
         Collectible [] memory result = new Collectible[](tokenCount);
         if (tokenCount == 0) {
@@ -53,14 +63,24 @@ contract ColeccionablesBBVA is ERC721, ERC721URIStorage, Ownable {
         return collectibles;
     }
 
-    // The following functions are overrides required by Solidity.
-    function _baseURI() internal pure override returns (string memory) {
-        return "URI.url";
+    function getCollectible(uint256 tokenId) external view returns (Collectible memory) {
+        return collectibles[tokenId];
     }
-    
+
 
     function _burn(uint256 tokenId) internal override(ERC721, ERC721URIStorage) {
         super._burn(tokenId);
+    }
+
+    function _baseURI() internal view virtual override returns (string memory) {
+        return BASE_URI;
+    }
+
+    function setBaseURI(string memory _newBaseURI) public onlyOwner {
+        BASE_URI = _newBaseURI;
+    }
+    function getBaseURI() public view returns (string memory) {
+        return _baseURI();
     }
 
     function tokenURI(uint256 tokenId)

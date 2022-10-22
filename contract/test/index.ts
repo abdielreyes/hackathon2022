@@ -16,25 +16,27 @@ describe("Deploy", function () {
 
 describe("BalanceOf", function () {
   it("BalanceOf", async function () {
+		const [owner] = await ethers.getSigners();
+		console.log(`sender address: ${owner.address}`);
 		const contract = await ethers.getContractAt("ColeccionablesBBVA", contractAddress);
 		await contract.createCollectible(1, address);
 		await contract.createCollectible(3, address);
 		await contract.createCollectible(5, address);
 		let res = await contract.getCollectibles();
+		res = await contract.tokensOfOwner(address);
+		console.log('tokens of owner');
 		console.log(res);
+		await contract.redeem(2);
 		res = await contract.tokensOfOwner(address);
 		console.log('tokens of owner');
 		console.log(res);
   });
 });
 
-describe("tokensOfOwner", function () {
-  it("BalanceOf", async function () {
+describe("tokenURI", function () {
+  it("tokenURI", async function () {
 		const contract = await ethers.getContractAt("ColeccionablesBBVA", contractAddress);
-		let res = await contract.balanceOf(address);
-		console.log(res);
-		res = await contract.tokensOfOwner(address);
-		console.log('tokens of owner');
+		let res = await contract.tokenURI(0);
 		console.log(res);
   });
 });

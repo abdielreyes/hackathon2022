@@ -15,7 +15,7 @@ const config: HardhatUserConfig = {
     runOnCompile: true,
     clear: true,
     flat: true,
-    except: ["IndividualItems", "Ownable", "IndividualRecipes", "IERC721", "IERC165", "Strings", "Address", "IERC721", "IERC721Receiver", "IERC721Enumerable", "Context", "SafeMath", "ERC721"],
+    except: ["ERC1155", "ERC165"],
     spacing: 2,
     pretty: true,
   },

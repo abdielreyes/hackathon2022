@@ -1,4 +1,5 @@
 import React from 'react'
+import Input from '../components/Input'
 import Subtitle from '../components/Subtitle'
 import TestCard from '../components/TestCard'
 import Title from '../components/Title'
@@ -16,6 +17,7 @@ export default function MoneyTest() {
 				<TestCard 
 					label='Comprar con TDC'
 				/>
+				<Input />
 			</section>
 		</div>
 	)

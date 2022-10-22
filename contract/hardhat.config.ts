@@ -1,15 +1,24 @@
 /** @type import('hardhat/config').HardhatUserConfig */
-require("@nomiclabs/hardhat-waffle");
 import "@nomiclabs/hardhat-waffle";
 import { HardhatUserConfig } from "hardhat/config";
 import dotenv from "dotenv";
 import "@nomiclabs/hardhat-ethers";
+import "hardhat-abi-exporter";
 
 dotenv.config()
 const { RPC_URL, PRIVATE_KEY } = process.env;
 const config: HardhatUserConfig = {
   solidity: "0.8.17",
   defaultNetwork: 'hardhat',
+  abiExporter: {
+    path: './data/abi',
+    runOnCompile: true,
+    clear: true,
+    flat: true,
+    except: ["IndividualItems", "Ownable", "IndividualRecipes", "IERC721", "IERC165", "Strings", "Address", "IERC721", "IERC721Receiver", "IERC721Enumerable", "Context", "SafeMath", "ERC721"],
+    spacing: 2,
+    pretty: true,
+  },
   networks: {
     hardhat: {},
     fuji: {

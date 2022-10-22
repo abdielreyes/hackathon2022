@@ -9,8 +9,24 @@ head = ["Diablo", "Sirena", "Muerte", "Borracho"]
 body = ["Diablo", "Sirena", "Muerte", "Borracho"]
 wall = "Fondo"
 
-#Defining images
+# Classifying
+head_files = {
+    "Diablo": "head1",
+    "Sirena": "head2",
+    "Muerte": "head3",
+    "Borracho": "head4"
+}
+body_files = {
+    "Diablo": "body1",
+    "Sirena": "body2",
+    "Muerte": "body3",
+    "Borracho": "body4"
+}
+wall_files = {
+    "Fondo": "wall1"
+}
 
+#Defining images
 all_images = [] 
 
 def create_new_image(i, j):
@@ -35,3 +51,17 @@ for item in all_images:
 
 print(all_images)
 
+# Create images
+os.mkdir(f'./images')
+for item in all_images:
+
+    im1 = Image.open(f'./scripts/face_parts/face/{head_files[item["Head"]]}.png').convert('RGBA')
+    im2 = Image.open(f'./scripts/face_parts/eyes/{body_files[item["Body"]]}.png').convert('RGBA')
+    im3 = Image.open(f'./scripts/face_parts/ears/{wall_files[item["Wall"]]}.png').convert('RGBA')
+
+    com1 = Image.alpha_composite(im1, im2)
+    com2 = Image.alpha_composite(com1, im3)
+
+    rgb_im = com2.convert('RGB')
+    file_name = str(item["tokenId"]) + ".png"
+    rgb_im.save("./images/" + file_name)

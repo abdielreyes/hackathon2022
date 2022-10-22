@@ -1,0 +1,65 @@
+{
+    "promoInfo":[{
+        "rarity":"1",
+        "price":"8000",
+        "name":"Comun"
+    },{
+        "rarity":"2",
+        "price":"16000",
+        "name":"Raro"
+    },{
+        "rarity":"3",
+        "price":"24000",
+        "name":"Epico"
+    }],
+  "promos": [
+    {
+      "rarity": "1",
+      "desc": "Tarjeta de regalo Uber"
+    },
+    {
+      "rarity": "1",
+      "desc": "1 Mensualidad sin costo de seguro moto/auto"
+    },
+    {
+      "rarity": "1",
+      "desc": "Una compra a MSI gratis"
+    },
+    {
+      "rarity": "1",
+      "desc": "Un mes sin promedio mensual minimo en debito"
+    },
+    {
+      "rarity": "1",
+      "desc": "1 mensualidad sin costo de seguro medico"
+    },
+    {
+      "rarity": "2",
+      "desc": "Incremento del 5% a tu linea de credito"
+    },
+    {
+      "rarity": "2",
+      "desc": "Descuento en tu tasa de interes por un anio"
+    },
+    {
+      "rarity": "3",
+      "desc": "1 anualidad gratuita en tu tarjeta de credito"
+    },
+    {
+      "rarity": "3",
+      "desc": "Boletos futbol MTY"
+    },
+    {
+      "rarity": "3",
+      "desc": "1 playera de los Rayados de MTY"
+    },
+    {
+      "rarity": "3",
+      "desc": "Incremento de 10% en tu linea de credito"
+    },
+    {
+      "rarity": "3",
+      "desc": "Prestamo personal con tasa preferencial"
+    }
+  ]
+}

@@ -1,4 +1,5 @@
 import React from 'react'
+import NFTCard from '../components/NFTCard'
 import Subtitle from '../components/Subtitle'
 import Title from '../components/Title'
 
@@ -14,10 +15,10 @@ export default function Collection() {
 					Ordenar por:
 				</div>
 			</section>
-			<section className='bg-white-1'>
-				<div className='bg-white-2 m-5 drop-shadow-md'>
-					<Subtitle label='Nombre del NFT' />
-				</div>
+			<section className='bg-white-1 flex flex-wrap'>
+				<NFTCard name='NFT Name' />
+				<NFTCard name='NFT Name' />
+				<NFTCard name='NFT Name' />
 			</section>
 		</div>
 	)

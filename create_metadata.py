@@ -19,7 +19,7 @@ for i in data:
     token_id = i['tokenId']
     token = {
         "image": IMAGES_BASE_URL + str(token_id) + '.png',
-        "imageId": token_id,
+        "nftId": token_id,
         "name": PROJECT_NAME + ' ' + str(token_id),
         "attributes": []
     }

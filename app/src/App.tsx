@@ -1,7 +1,11 @@
+import MobileLayout from "./components/MobileLayout";
+import Router from "./pages/Router";
 function App() {
   return (
-    <div className="flex flex-col items-center justify-center h-screen text-red-300 bg-gradient-to-br from-gray-300 via-teal-700 to-gray-800">
-hello
+    <div className="bg-black flex justify-center items-center min-h-full">
+      <MobileLayout>
+        <Router />
+      </MobileLayout>
     </div>
   );
 }

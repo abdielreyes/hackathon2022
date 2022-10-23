@@ -1,5 +1,7 @@
+const  router = require("express").Router();
 const ethers = require('ethers')
 const abi = require('./abi')
+const verify = require("../routes/verifyToken")
 const providerRPC = {
     avalanche: {
       name: 'avalanche',
@@ -21,12 +23,9 @@ const contractAddress = "0x99a416bE5b7d713842724C552f82C1A5851e5a1c"
 const address = "0x32C6038e04A9bE51Fe4feeAF30E0cE3847434EEf"
 const incrementer = new ethers.Contract(contractAddress,abi,provider)
 
-async function blockchain(){
+router.post('/getContractInfo',verify,async (req,res)=>{ 
+  let bn = await incrementer.balanceOf(address,0)
+  res.status(200).send(bn)
+})
 
-    let bn = await incrementer.balanceOf(address,0)
-
-
-    console.log(bn)
-}
-
-module.exports = blockchain
+module.exports = router

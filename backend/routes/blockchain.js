@@ -22,15 +22,13 @@ const providerRPC = {
     }
   );
 
-const privKey = '0x9761a8d5af8de303cbbf2a53d14aa5799ba4c153a5f0c8cb0154f84fd39e3be4';
-console.log(privKey);
+const privKey = process.env.PRIVATE_KEY;
 const wallet = new ethers.Wallet(privKey, provider);
-const contractAddress = "0xC412A0860A3106208E1Dd59592E8771F207e2862";
-
-const address = "0x32C6038e04A9bE51Fe4feeAF30E0cE3847434EEf";
+const contractAddress = process.env.CONTRACT;
 const contract = new ethers.Contract(contractAddress, abi, wallet);
 
 router.post('/getContractInfo',verify,async (req,res)=>{ 
+  const address = req.body.address;
   let bn = await contract.balanceOf(address)
   res.status(200).send(bn)
 });

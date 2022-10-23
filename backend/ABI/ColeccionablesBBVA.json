@@ -14,7 +14,6 @@
   "function getBaseURI() view returns (string)",
   "function getCollectible(uint256) view returns (tuple(uint256,uint256,bool,bool))",
   "function getCollectibles() view returns (tuple(uint256,uint256,bool,bool)[])",
-  "function getCounter() view returns (uint256)",
   "function isApprovedForAll(address,address) view returns (bool)",
   "function name() view returns (string)",
   "function owner() view returns (address)",

@@ -1,0 +1,306 @@
+[
+    {
+        "image": "https://gateway.pinata.cloud/ipfs/QmYQFD6ju6US8PwHjUHBkvfyNkLVHuFFZvDGCqCTCoGd3M/0.png",
+        "nftId": 0,
+        "name": "El Diablo",
+        "attributes": [
+            {
+                "trait_type": "Head",
+                "value": "Diablo"
+            },
+            {
+                "trait_type": "Body",
+                "value": "Diablo"
+            },
+            {
+                "trait_type": "Rarity",
+                "value": "Épico"
+            }
+        ]
+    },
+    {
+        "image": "https://gateway.pinata.cloud/ipfs/QmYQFD6ju6US8PwHjUHBkvfyNkLVHuFFZvDGCqCTCoGd3M/1.png",
+        "nftId": 1,
+        "name": "Coleccionables BBVA 1",
+        "attributes": [
+            {
+                "trait_type": "Head",
+                "value": "Diablo"
+            },
+            {
+                "trait_type": "Body",
+                "value": "Sirena"
+            },
+            {
+                "trait_type": "Rarity",
+                "value": "Raro"
+            }
+        ]
+    },
+    {
+        "image": "https://gateway.pinata.cloud/ipfs/QmYQFD6ju6US8PwHjUHBkvfyNkLVHuFFZvDGCqCTCoGd3M/2.png",
+        "nftId": 2,
+        "name": "Coleccionables BBVA 2",
+        "attributes": [
+            {
+                "trait_type": "Head",
+                "value": "Diablo"
+            },
+            {
+                "trait_type": "Body",
+                "value": "Muerte"
+            },
+            {
+                "trait_type": "Rarity",
+                "value": "Común"
+            }
+        ]
+    },
+    {
+        "image": "https://gateway.pinata.cloud/ipfs/QmYQFD6ju6US8PwHjUHBkvfyNkLVHuFFZvDGCqCTCoGd3M/3.png",
+        "nftId": 3,
+        "name": "Coleccionables BBVA 3",
+        "attributes": [
+            {
+                "trait_type": "Head",
+                "value": "Diablo"
+            },
+            {
+                "trait_type": "Body",
+                "value": "Borracho"
+            },
+            {
+                "trait_type": "Rarity",
+                "value": "Raro"
+            }
+        ]
+    },
+    {
+        "image": "https://gateway.pinata.cloud/ipfs/QmYQFD6ju6US8PwHjUHBkvfyNkLVHuFFZvDGCqCTCoGd3M/4.png",
+        "nftId": 4,
+        "name": "Coleccionables BBVA 4",
+        "attributes": [
+            {
+                "trait_type": "Head",
+                "value": "Sirena"
+            },
+            {
+                "trait_type": "Body",
+                "value": "Diablo"
+            },
+            {
+                "trait_type": "Rarity",
+                "value": "Común"
+            }
+        ]
+    },
+    {
+        "image": "https://gateway.pinata.cloud/ipfs/QmYQFD6ju6US8PwHjUHBkvfyNkLVHuFFZvDGCqCTCoGd3M/5.png",
+        "nftId": 5,
+        "name": "La Sirena",
+        "attributes": [
+            {
+                "trait_type": "Head",
+                "value": "Sirena"
+            },
+            {
+                "trait_type": "Body",
+                "value": "Sirena"
+            },
+            {
+                "trait_type": "Rarity",
+                "value": "Épico"
+            }
+        ]
+    },
+    {
+        "image": "https://gateway.pinata.cloud/ipfs/QmYQFD6ju6US8PwHjUHBkvfyNkLVHuFFZvDGCqCTCoGd3M/6.png",
+        "nftId": 6,
+        "name": "Coleccionables BBVA 6",
+        "attributes": [
+            {
+                "trait_type": "Head",
+                "value": "Sirena"
+            },
+            {
+                "trait_type": "Body",
+                "value": "Muerte"
+            },
+            {
+                "trait_type": "Rarity",
+                "value": "Común"
+            }
+        ]
+    },
+    {
+        "image": "https://gateway.pinata.cloud/ipfs/QmYQFD6ju6US8PwHjUHBkvfyNkLVHuFFZvDGCqCTCoGd3M/7.png",
+        "nftId": 7,
+        "name": "Coleccionables BBVA 7",
+        "attributes": [
+            {
+                "trait_type": "Head",
+                "value": "Sirena"
+            },
+            {
+                "trait_type": "Body",
+                "value": "Borracho"
+            },
+            {
+                "trait_type": "Rarity",
+                "value": "Raro"
+            }
+        ]
+    },
+    {
+        "image": "https://gateway.pinata.cloud/ipfs/QmYQFD6ju6US8PwHjUHBkvfyNkLVHuFFZvDGCqCTCoGd3M/8.png",
+        "nftId": 8,
+        "name": "Coleccionables BBVA 8",
+        "attributes": [
+            {
+                "trait_type": "Head",
+                "value": "Muerte"
+            },
+            {
+                "trait_type": "Body",
+                "value": "Diablo"
+            },
+            {
+                "trait_type": "Rarity",
+                "value": "Raro"
+            }
+        ]
+    },
+    {
+        "image": "https://gateway.pinata.cloud/ipfs/QmYQFD6ju6US8PwHjUHBkvfyNkLVHuFFZvDGCqCTCoGd3M/9.png",
+        "nftId": 9,
+        "name": "Coleccionables BBVA 9",
+        "attributes": [
+            {
+                "trait_type": "Head",
+                "value": "Muerte"
+            },
+            {
+                "trait_type": "Body",
+                "value": "Sirena"
+            },
+            {
+                "trait_type": "Rarity",
+                "value": "Común"
+            }
+        ]
+    },
+    {
+        "image": "https://gateway.pinata.cloud/ipfs/QmYQFD6ju6US8PwHjUHBkvfyNkLVHuFFZvDGCqCTCoGd3M/10.png",
+        "nftId": 10,
+        "name": "La Muerte",
+        "attributes": [
+            {
+                "trait_type": "Head",
+                "value": "Muerte"
+            },
+            {
+                "trait_type": "Body",
+                "value": "Muerte"
+            },
+            {
+                "trait_type": "Rarity",
+                "value": "Épico"
+            }
+        ]
+    },
+    {
+        "image": "https://gateway.pinata.cloud/ipfs/QmYQFD6ju6US8PwHjUHBkvfyNkLVHuFFZvDGCqCTCoGd3M/11.png",
+        "nftId": 11,
+        "name": "Coleccionables BBVA 11",
+        "attributes": [
+            {
+                "trait_type": "Head",
+                "value": "Muerte"
+            },
+            {
+                "trait_type": "Body",
+                "value": "Borracho"
+            },
+            {
+                "trait_type": "Rarity",
+                "value": "Común"
+            }
+        ]
+    },
+    {
+        "image": "https://gateway.pinata.cloud/ipfs/QmYQFD6ju6US8PwHjUHBkvfyNkLVHuFFZvDGCqCTCoGd3M/12.png",
+        "nftId": 12,
+        "name": "Coleccionables BBVA 12",
+        "attributes": [
+            {
+                "trait_type": "Head",
+                "value": "Borracho"
+            },
+            {
+                "trait_type": "Body",
+                "value": "Diablo"
+            },
+            {
+                "trait_type": "Rarity",
+                "value": "Común"
+            }
+        ]
+    },
+    {
+        "image": "https://gateway.pinata.cloud/ipfs/QmYQFD6ju6US8PwHjUHBkvfyNkLVHuFFZvDGCqCTCoGd3M/13.png",
+        "nftId": 13,
+        "name": "Coleccionables BBVA 13",
+        "attributes": [
+            {
+                "trait_type": "Head",
+                "value": "Borracho"
+            },
+            {
+                "trait_type": "Body",
+                "value": "Sirena"
+            },
+            {
+                "trait_type": "Rarity",
+                "value": "Común"
+            }
+        ]
+    },
+    {
+        "image": "https://gateway.pinata.cloud/ipfs/QmYQFD6ju6US8PwHjUHBkvfyNkLVHuFFZvDGCqCTCoGd3M/14.png",
+        "nftId": 14,
+        "name": "Coleccionables BBVA 14",
+        "attributes": [
+            {
+                "trait_type": "Head",
+                "value": "Borracho"
+            },
+            {
+                "trait_type": "Body",
+                "value": "Muerte"
+            },
+            {
+                "trait_type": "Rarity",
+                "value": "Raro"
+            }
+        ]
+    },
+    {
+        "image": "https://gateway.pinata.cloud/ipfs/QmYQFD6ju6US8PwHjUHBkvfyNkLVHuFFZvDGCqCTCoGd3M/15.png",
+        "nftId": 15,
+        "name": "El Borracho",
+        "attributes": [
+            {
+                "trait_type": "Head",
+                "value": "Borracho"
+            },
+            {
+                "trait_type": "Body",
+                "value": "Borracho"
+            },
+            {
+                "trait_type": "Rarity",
+                "value": "Épico"
+            }
+        ]
+    }
+]

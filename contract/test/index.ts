@@ -1,7 +1,9 @@
 import { ethers } from "hardhat";
 
 const address = '0x32C6038e04A9bE51Fe4feeAF30E0cE3847434EEf';
-let contractAddress = '0x731fd2ecd21F4D0bea568253902154103FCe8851'
+
+let contractAddress = '0xb53A84Ae341fAFb1c7a77D695C70768428CE1e61'
+
 
 describe("Deploy", function () {
   it("Deploy", async function () {
@@ -38,13 +40,23 @@ describe("tokenURI", function () {
 		const contract = await ethers.getContractAt("ColeccionablesBBVA", contractAddress);
 		let res = await contract.tokenURI(0);
 		console.log(res);
-  });
+	});
 });
+
 
 describe("mint", function () {
   it("mint", async function () {
 		const contract = await ethers.getContractAt("ColeccionablesBBVA", contractAddress);
 		let res = await contract.createCollectible(2, address, {gasLimit: 3500000});
+		console.log(res);
+  });
+});
+
+describe.only("get uri", function () {
+  it("get uri", async function () {
+		const contract = await ethers.getContractAt("ColeccionablesBBVA", contractAddress);
+		let res = await contract.tokenURI(0);
+		//let res = await contract.setBaseURI('http://52.188.108.125:8080/api/metadata/');
 		console.log(res);
   });
 });

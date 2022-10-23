@@ -20,7 +20,7 @@ contract ColeccionablesBBVA is ERC721, ERC721URIStorage, Ownable {
 
     Collectible [] public collectibles;
 
-    string private BASE_URI = 'https://52.188.108.125:8080/api/metadata/';
+    string private BASE_URI = 'http://52.188.108.125:8080/api/metadata/';
 
     constructor() ERC721("ColleccionablesBBVA", "cBBVA") {}
     
@@ -66,7 +66,6 @@ contract ColeccionablesBBVA is ERC721, ERC721URIStorage, Ownable {
     function getCollectible(uint256 tokenId) external view returns (Collectible memory) {
         return collectibles[tokenId];
     }
-
 
     function _burn(uint256 tokenId) internal override(ERC721, ERC721URIStorage) {
         super._burn(tokenId);

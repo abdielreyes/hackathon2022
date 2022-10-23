@@ -53,5 +53,15 @@ router.post("/faucetBalance", verify, async (req, res) => {
   });
 });
 
+router.post("/getPromos", verify, async (req, res) => {
+  User.findOne({ _id: req.body.user_id }, (err, resp) => {
+    if (err) {
+      console.log(err);
+      res.status(400).send("Error getting promos");
+    } else {
+      res.status(200).send(resp.promos);
+    }
+  });
+});
 
 module.exports = router;

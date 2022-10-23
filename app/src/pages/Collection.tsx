@@ -16,9 +16,24 @@ export default function Collection() {
 				</div>
 			</section>
 			<section className='bg-white-1 flex flex-wrap'>
-				<NFTCard name='NFT Name' />
-				<NFTCard name='NFT Name' />
-				<NFTCard name='NFT Name' />
+				<NFTCard
+					tokenId='1'
+					rarity='common'
+					name='NFT Name'
+					src='https://gateway.pinata.cloud/ipfs/QmPR5g6pdVPDzS5ksVtQTxL1nBm1vLtZqjn2Mri13AuxrB'
+				/>
+				<NFTCard
+					tokenId='2'
+					rarity='rare'
+					name='NFT Name'
+					src='https://gateway.pinata.cloud/ipfs/QmPR5g6pdVPDzS5ksVtQTxL1nBm1vLtZqjn2Mri13AuxrB'
+				/>
+				<NFTCard
+					tokenId='3'
+					rarity='epic'
+					name='NFT Name'
+					src='https://gateway.pinata.cloud/ipfs/QmPR5g6pdVPDzS5ksVtQTxL1nBm1vLtZqjn2Mri13AuxrB'
+				/>
 			</section>
 		</div>
 	)

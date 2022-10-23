@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { useUserInfo } from '../contexts/UserInfo';
+import { useUserInfo } from '../contexts/UserInfoContext';
 
 const API_URL = 'http://52.188.108.125:8080/api';
 

@@ -6,3 +6,7 @@ export interface User {
 	money: number
 	created_at: string
 }
+
+export interface NFT {
+	
+}

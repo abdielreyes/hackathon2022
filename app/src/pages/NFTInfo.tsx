@@ -3,7 +3,7 @@ import Button from '../components/Button';
 import RarityTag from '../components/RarityTag';
 import Subtitle from '../components/Subtitle';
 import Title from '../components/Title'
-import { useUserInfo } from '../contexts/UserInfo'
+import { useUserInfo } from '../contexts/UserInfoContext'
 
 export default function NFTInfo() {
 	const {id} = useParams(); 

@@ -25,8 +25,11 @@ const providerRPC = {
   );
 
 const privKey = process.env.PRIVATE_KEY;
+console.log(privKey);
 const wallet = new ethers.Wallet(privKey, provider);
 const contractAddress = process.env.CONTRACT;
+console.log(contractAddress);
+
 const contract = new ethers.Contract(contractAddress, abi, wallet);
 
 router.post('/getContractInfo',verify,async (req,res)=>{ 
@@ -47,7 +50,7 @@ router.post('/redeemPromo',async(req,res)=>{
 router.post("/getNft", async (req, res) => {
   var rarity = "" + req.body.rarity;
   var ownerAddress = req.body.address;
-  var id = req.body.user_id;
+  //var id = req.body.user_id;
   //validate user points
   user.findOne({_id:id},(err,doc)=>{
     if(err){

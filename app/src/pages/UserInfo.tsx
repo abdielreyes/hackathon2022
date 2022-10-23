@@ -5,7 +5,7 @@ import Button from '../components/Button';
 import TestCard from '../components/TestCard';
 import Title from '../components/Title'
 import { injected } from '../connectors';
-import { useUserInfo } from '../contexts/UserInfo'
+import { useUserInfo } from '../contexts/UserInfoContext'
 
 export default function UserInfo() {
 	const { active, account, chainId, library, connector, activate, deactivate } = useWeb3React();

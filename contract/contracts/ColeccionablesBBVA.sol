@@ -14,8 +14,9 @@ contract ColeccionablesBBVA is ERC721, ERC721URIStorage, Ownable {
     struct Collectible {
         uint256 id;
         uint256 promoID;
+        string userID;
         bool reedemed;
-        bool onSale;
+        bool approved;
     }
 
     Collectible [] public collectibles;
@@ -26,16 +27,25 @@ contract ColeccionablesBBVA is ERC721, ERC721URIStorage, Ownable {
     
     event NewCollectible (address indexed owner, uint256 id);
     event ReedemedCollectible (uint256 id);
+    event ApprovedReedemCollectible (uint256 id);
 
-    function redeem(uint256 _tokenId) external {
+    function approveRedeem(uint256 _tokenId) external {
         Collectible storage collectible = collectibles[_tokenId];
-        require(!collectible.reedemed, "Collectible already reedemed");
-        emit ReedemedCollectible(_tokenId);
-        collectible.reedemed=true;
+        require(ownerOf(_tokenId)==msg.sender, "sender is not the owner of token");
+        collectible.approved=true;
+        emit ApprovedReedemCollectible(_tokenId);
     }
 
-    function createCollectible(uint256 _promoID, address _owner) external onlyOwner{
-        Collectible memory collectible = Collectible(COUNTER, _promoID, false, false);
+    function redeem(uint256 _tokenId) external onlyOwner{
+        Collectible storage collectible = collectibles[_tokenId];
+        require(!collectible.reedemed, "Collectible already reedemed");
+        require(collectible.approved, "Collectible is not approved for reedem");
+        collectible.reedemed=true;
+        emit ReedemedCollectible(_tokenId);
+    }
+
+    function createCollectible(uint256 _promoID, string memory _userID, address _owner) external onlyOwner{
+        Collectible memory collectible = Collectible(COUNTER, _promoID, _userID, false, false);
         collectibles.push(collectible);
         _safeMint(_owner, COUNTER);
         emit NewCollectible(_owner, COUNTER);

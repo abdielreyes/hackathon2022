@@ -1,12 +1,14 @@
 import { ethers } from "hardhat";
 
-const address = '0x32C6038e04A9bE51Fe4feeAF30E0cE3847434EEf';
+let address = '0x32C6038e04A9bE51Fe4feeAF30E0cE3847434EEf';
 
-let contractAddress = '0xb53A84Ae341fAFb1c7a77D695C70768428CE1e61'
-
+let contractAddress = '0xC412A0860A3106208E1Dd59592E8771F207e2862'
 
 describe("Deploy", function () {
   it("Deploy", async function () {
+		const [owner] = await ethers.getSigners();
+		console.log(`sender address: ${owner.address}`);
+		address=owner.address;
 		console.log('deploying...');
 		const Coleccionables = await ethers.getContractFactory("ColeccionablesBBVA");
 		const contract = await Coleccionables.deploy();
@@ -18,12 +20,10 @@ describe("Deploy", function () {
 
 describe("BalanceOf", function () {
   it("BalanceOf", async function () {
-		const [owner] = await ethers.getSigners();
-		console.log(`sender address: ${owner.address}`);
 		const contract = await ethers.getContractAt("ColeccionablesBBVA", contractAddress);
-		await contract.createCollectible(1, address);
-		await contract.createCollectible(3, address);
-		await contract.createCollectible(5, address);
+		await contract.createCollectible(1, "635481f7b864bee098e15491", address);
+		await contract.createCollectible(3, "635481f7b864bee098e15491", address);
+		await contract.createCollectible(5, "635481f7b864bee098e15491", address);
 		let res = await contract.getCollectibles();
 		res = await contract.tokensOfOwner(address);
 		console.log('tokens of owner');
@@ -35,6 +35,7 @@ describe("BalanceOf", function () {
   });
 });
 
+/*
 describe("tokenURI", function () {
   it("tokenURI", async function () {
 		const contract = await ethers.getContractAt("ColeccionablesBBVA", contractAddress);
@@ -42,12 +43,28 @@ describe("tokenURI", function () {
 		console.log(res);
 	});
 });
+*/
 
 
-describe("mint", function () {
-  it("mint", async function () {
+describe("approve redeem", function () {
+  it("approve redeem", async function () {
 		const contract = await ethers.getContractAt("ColeccionablesBBVA", contractAddress);
-		let res = await contract.createCollectible(2, address, {gasLimit: 3500000});
+		let res = await contract.approveRedeem(2);
+		res = await contract.tokensOfOwner(address);
+		console.log('tokens of owner');
+		console.log(res);
+		await contract.redeem(2);
+		res = await contract.tokensOfOwner(address);
+		console.log('tokens of owner');
+		console.log(res);
+  });
+});
+
+describe("get collectible", function () {
+  it("get collectible", async function () {
+		const contract = await ethers.getContractAt("ColeccionablesBBVA", contractAddress);
+		let res = await contract.getCollectibles();
+		res = await contract.getCollectible(0x00);
 		console.log(res);
   });
 });

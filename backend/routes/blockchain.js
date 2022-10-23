@@ -4,7 +4,7 @@ const abi = require('../ABI/ColeccionablesBBVA.json')
 const verify = require("../routes/verifyToken")
 const promos = require("../data/promos.json");
 const nftData = require("../data/NFTs.json");
-const addKey = require("../utils/metadataHandler");
+const {addKey } = require("../utils/metadataHandler");
 const user = require("../models/user");
 const { getTokenInfo }= require("../utils/metadataHandler")
 
@@ -43,22 +43,24 @@ router.post('/redeemPromo',async(req,res)=>{
   var tokenId = req.body.token_id;
   let resTx = await contract.redeem(tokenId, {gasLimit: 3500000});
   const receipt = await resTx.wait();
-  const tokenId = receipt.events[1].args[1].toNumber()
+  //const tokenId = receipt.events[1].args[1].toNumber()
   console.log(getTokenInfo(tokenId))
 })
 
 router.post("/getNft", async (req, res) => {
-  var rarity = "" + req.body.rarity;
-  var ownerAddress = req.body.address;
-  //var id = req.body.user_id;
+  const rarity = "" + req.body.rarity;
+  const ownerAddress = req.body.address;
+  const id = req.body.user_id;
   //validate user points
   user.findOne({_id:id},(err,doc)=>{
     if(err){
       console.log(err);
       res.status(400).send("Error getting user")
+      return;
     }else{
       if(doc.points<=(8000*rarity)){
         res.status(400).send("Not enough points to buy")
+        return;
       }else{
       }
       
@@ -93,7 +95,7 @@ router.post("/getNft", async (req, res) => {
   };
   console.log(nft);
   //mint nft
-  let resTx = await contract.createCollectible(promo.id, user.id,ownerAddress, {gasLimit: 3500000});
+  let resTx = await contract.createCollectible(promo.id, id, ownerAddress, {gasLimit: 3500000});
   const receipt = await resTx.wait();
   const tokenId = receipt.events[1].args[1].toNumber()
   console.log(tokenId);
@@ -110,9 +112,11 @@ router.post("/getNft", async (req, res) => {
     promoId: promo.id,
     promoDescription: promo.desc
   };
-  user.findByIdAndUpdate(id,{$inc:(rarity*8000*-1)},(err,doc)=>{
+  user.findByIdAndUpdate(id,{$inc:{points: rarity*8000*-1}},(err,doc)=>{
     if(err){
+      console.log(err);
       res.status(400).send("Error spenting points ")
+      return;
     }
     console.log("Points spent!")
   })

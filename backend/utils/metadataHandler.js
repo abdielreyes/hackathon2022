@@ -41,6 +41,6 @@ function getTokenInfo(tokenId){
 }
 
 
-module.exports = [addKey,getTokenInfo]
+module.exports = {addKey,getTokenInfo};
 
 

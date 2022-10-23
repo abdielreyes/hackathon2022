@@ -9,6 +9,7 @@ const userRoutes = require('./routes/user')
 const accountRoutes = require('./routes/account')
 const blockchainRoutes = require('./routes/blockchain')
 const cookieParser = require('cookie-parser')
+const addKey = require('./utils/metadataHandler')
 
 app.use(cookieParser())
 app.use(express.json())
@@ -26,6 +27,7 @@ mongoose.connect(process.env.DB_CONNECT,(err)=>{
 	}
 })
 
+// addKey("13323","22321","23123")
 
 const PORT = 8080
 app.get('/',(req,res)=>{
@@ -35,6 +37,7 @@ app.use('/api/metadata', metadataRoutes);
 app.use('/api/blockchain',blockchainRoutes);
 app.use('/api/user', userRoutes);
 app.use('/api/account',accountRoutes);
+
 
 app.listen(PORT,()=>{
 	console.log(`Server in ${PORT}`)

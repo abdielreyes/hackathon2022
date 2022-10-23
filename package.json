@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "@iconify/react": "^4.0.0",
+    "iconify": "^1.4.0"
+  }
+}

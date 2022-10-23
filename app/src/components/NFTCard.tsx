@@ -20,13 +20,17 @@ export default function NFTCard({
   return (
     <Link to={`/nft/${tokenId}`}>
       <div className='bg-white-2 mx-2 my-3 drop-shadow-md px-5 w-40'>
-        <div>
-          <img src={src} alt='NFT image' className='w-full h-full' />
+        <div className='pt-4'>
+          <img src={src} alt='NFT' className='w-full h-full' />
         </div>
         <Subtitle label={name} />
-        <div className='flex flex-row'>
-          <RarityTag rarity={rarity}/>
-          <Button label='Canjear'/>         
+        <div className='flex flex-col'>
+          <span className='flex flex-col justify-between'>
+            <RarityTag rarity={rarity}/>
+          </span>
+          <span className='my-4'>
+            <Button label='Canjear'/> 
+          </span>      
         </div>
       </div>
     </Link>

@@ -19,16 +19,20 @@ export default function Login() {
 
 	return (
 		<div className='flex flex-col'>
-			<section className='bg-bbva-blue-1'>
+			<section className='bg-bbva-blue-2 h-56'>
+				<h1 className='font-semibold text-white-2 text-center text-xl m-5'>
+					BBVA
+				</h1>
+			</section>
+			<section className='bg-bbva-blue-3'>
 				<div className='text-white-2 text-center'>
 				</div>
-				<Title label='Login' />
-				<div className='text-white-2 flex flex-row space-x-5'>
-					<span>Phone:</span>
+				<div className='text-white-2 flex flex-col space-x-5'>
+					<span className='p-2'>Número celular:</span>
 					<Input value={phone} onChange={setPhone} />
 				</div>
-				<div className='text-white-2 flex flex-row space-x-5'>
-					<span>Password:</span>
+				<div className='text-white-2 flex flex-col space-x-5'>
+					<span>Contraseña:</span>
 					<Input value={password} onChange={setPassword} type='password' />
 				</div>
 				<Button label='login' onClick={onLogin} />

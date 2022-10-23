@@ -7,8 +7,8 @@ export default function Input({onChange=(e:string )=>{}, ...defaultProps}: Input
   return (
     <input
       type='text'
-      className='block bg-neutral-300 w-full my-2 h-10 rounded-sm outline-none text-black
-      focus:ring-0 focus:ring-white px-3 text-sm' 
+      className='bg-white-1 w-full my-2 h-10 rounded-sm outline-none text-black
+      focus:ring-0 focus:ring-white text-sm' 
       value={defaultProps.value}
       onChange={(e)=>onChange(e.target.value)} 
       placeholder={defaultProps.placeholder}

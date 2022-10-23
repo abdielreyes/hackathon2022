@@ -11,7 +11,7 @@ export default function TestCard({
   children
 }:TestCardProps) {
   return (
-    <div className='bg-white-2 m-5 drop-shadow-md px-5'>
+    <div className='bg-white-2 m-5 drop-shadow-md px-5 pb-5'>
       <Subtitle label={label} />
       {children}
     </div>

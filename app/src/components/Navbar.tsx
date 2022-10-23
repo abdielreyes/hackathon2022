@@ -5,7 +5,7 @@ import { Icon } from '@iconify/react';
 export default function Navbar() {
 	const {account} = useWeb3React();
 	return (
-		<nav className="bg-bbva-blue-1 text-white px-4 py-2 font-medium fixed bottom-0 w-full">
+		<nav className="bg-bbva-blue-1 text-white px-4 py-2 font-medium fixed bottom-0 w-full max-w-sm">
 			<ul className="flex flex-row space-x-5 justify-center">
 				<li>
 					<Link to="/">

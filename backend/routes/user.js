@@ -31,7 +31,7 @@ router.post("/register", async (req, res) => {
   }
 })
 router.get('/getUser',verify,async(req,res)=>{
-  var doc =  User.findById(req.body.user_id)
+  var doc =  User.findById(req.query.user_id)
   res.status(200).send(doc)
 })
 

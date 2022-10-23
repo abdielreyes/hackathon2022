@@ -51,6 +51,7 @@ export default function GetNFT() {
 						<Button label='Comprar por 24000 puntos' onClick={()=>onGetNFT(3)} />
 					</div>
 				</TestCard>
+				<div className='h-12'></div>
 			</section>
 		</div>
 	)

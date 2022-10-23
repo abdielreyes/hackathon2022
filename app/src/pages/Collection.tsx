@@ -31,6 +31,7 @@ export default function Collection() {
 					src='https://gateway.pinata.cloud/ipfs/QmPR5g6pdVPDzS5ksVtQTxL1nBm1vLtZqjn2Mri13AuxrB'
 				/>
 			</section>
+			<div className='h-16 bg-white-1'></div>
 		</div>
 	)
 }

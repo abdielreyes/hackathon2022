@@ -6,19 +6,19 @@ export default function RarityTag({rarity}:SubtitleProps) {
   const rarityTranslate = {
     'common': {
       label:'Común',
-      color: 'bg-green-500'
+      color: 'bg-green-common'
     },
     'rare': {
-      label:'Rare',
-      color: 'bg-purple-500'
+      label:'Raro',
+      color: 'bg-purple-rare'
     },
     'epic': {
       label:'Épico',
-      color: 'bg-yellow-500'
+      color: 'bg-yellow-epic'
     },
   }
   return (
-    <div className={`text-gray-2 font-bold py-3 ${rarityTranslate[rarity].color}`}>
+    <div className={`flex items-center text-white-2 py-1 px-3 rounded-xl text-xs w-fit ${rarityTranslate[rarity].color}`}>
       {rarityTranslate[rarity].label}
     </div>
   )

@@ -51,7 +51,7 @@ router.post("/login", async (req, res) => {
   if (!validPass) {
     return res.status(400).send("Phone or password is wrong");
   }
-  const token = jwt.sign({_id: user.id}, process.env.TOKEN_SECRET);
+  const token = jwt.sign({_id: user._id}, process.env.TOKEN_SECRET);
   res.status(200).cookie('token',token,{
     secure:false,
     httpOnly:true

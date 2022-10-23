@@ -33,14 +33,18 @@ export default function MoneyTest() {
 					label='Agregar dinero de prueba'
 				>
 					<Input value={money} onChange={setMoney} />
-					<Button label='Agregar' onClick={onGetMoney} />
+					<div className='text-center mt-3'>
+						<Button label='Agregar' onClick={onGetMoney} />
+					</div>
 				</TestCard>
 
 				<TestCard 
 					label='Comprar con TDC'
 				>
 					<Input value={buyPrice} onChange={setBuyPrice} />
-					<Button label='Comprar' onClick={onPurchase} />
+					<div className='text-center mt-3'>
+						<Button label='Comprar' onClick={onPurchase} />
+					</div>
 				</TestCard>
 			</section>
 		</div>

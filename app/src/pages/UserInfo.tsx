@@ -2,6 +2,7 @@ import { useWeb3React } from '@web3-react/core';
 import { InjectedConnector } from '@web3-react/injected-connector';
 import { useEffect } from 'react';
 import Button from '../components/Button';
+import TestCard from '../components/TestCard';
 import Title from '../components/Title'
 import { injected } from '../connectors';
 import { useUserInfo } from '../contexts/UserInfo'
@@ -53,11 +54,18 @@ export default function UserInfo() {
 					<span>{_id}</span>
 				</div>
 			</section>
-			{account?
+			<section className='text-center'>
+				<TestCard label='' >
+					<p className='text-gray-1 mb-2 text-sm'>
+						Conecta con Metamask para acceder a esta sección
+					</p>
+					<div className='px-10'>
+						<img alt='' src='metamask-logo.png'/>
+					</div>{account?
 				(
 					<>
 					<div className='m-6 text-center'>
-						<span className='text-xl font-bold'>Conectado a Metamask</span>
+						<span className='font-bold'>Conectado a Metamask</span>
 						<Button label='Desconectar' onClick={disconnect} />
 					</div>
 						
@@ -68,6 +76,9 @@ export default function UserInfo() {
 				<Button label='Conectar con Metamask' onClick={connect} />
 			</div>
 			}
+				</TestCard>
+			</section>
+			
 		</div>
 	)
 }

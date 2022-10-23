@@ -7,7 +7,7 @@ export default function Input({onChange=(e:string )=>{}, ...defaultProps}: Input
   return (
     <input
       type='text'
-      className='bg-white-1 w-4/5 my-2 h-10 rounded-sm outline-none text-black
+      className='bg-white-1 w-full my-2 h-10 rounded-sm outline-none text-black border-b-2 border-gray-2
       focus:ring-0 focus:ring-white text-sm px-4' 
       value={defaultProps.value}
       onChange={(e)=>onChange(e.target.value)} 

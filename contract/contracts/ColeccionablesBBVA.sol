@@ -52,7 +52,7 @@ contract ColeccionablesBBVA is ERC721, ERC721URIStorage, Ownable {
         COUNTER++;
     }
     
-    function tokensOfOwner(address _owner) external view onlyOwner returns (Collectible[] memory) {
+    function tokensOfOwner(address _owner) external view returns (Collectible[] memory) {
         uint256 tokenCount = balanceOf(_owner);
         Collectible [] memory result = new Collectible[](tokenCount);
         if (tokenCount == 0) {

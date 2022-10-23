@@ -7,6 +7,12 @@ export interface User {
 	created_at: string
 }
 
-export interface NFT {
-	
+export interface Metadata {
+	tokenId: number	
+	image: string
+	name: string
+	head: string
+	body: string
+	promoId: string
+	promoDescription: string
 }

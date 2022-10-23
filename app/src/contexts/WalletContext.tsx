@@ -1,58 +1,53 @@
 import { createContext, ReactNode, useContext, useEffect, useState } from "react";
-import { User } from "../types";
+import useContract from "../hooks/useContract";
+import { Metadata } from "../types";
+import ABI from "../ABI/ColeccionablesBBVA.json";
+import { useWeb3React } from "@web3-react/core";
 
 interface WalletContextInterface {
-	metadatas: 
+	metadatas: Metadata[]
 }
 
 const WalletContext = createContext< WalletContextInterface | undefined>(undefined);
 
 const WalletContextProvider = ({children}: {children: ReactNode}) => {
-  const [_id, setId] = useState<string | undefined>();
-  const [name, setName] = useState<string | undefined>();
-	const [phone, setPhone] = useState<string | undefined>()
-	const [points, setPoints] = useState(0);
-	const [money, setMoney] = useState(0);
-
-  const setUserData = (user: User) => {
-    setId(user._id);
-    setName(user.name);
-    setPhone(user.phone);
-		setMoney(user.money);
-		setPoints(user.points);
-  };
-  const signOut = () => {
-    setId(undefined);
-    setName(undefined);
-		setPhone(undefined)
-  };
-
+  const {account} = useWeb3React();
+  const [metadatas, setMetadatas] = useState([]);
+  console.log(account, process.env.REACT_APP_CONTRACT );
+  const contract = useContract(process.env.REACT_APP_CONTRACT || '', ABI, false);
+  
   useEffect(() => {
-    // set info at start
-  }, []);
+    const aux = async () => {
+      if (account && contract) {
+        const res = await contract.tokensOfOwner(account);
+        const aux = [];
+        res.forEach(metadata => {
+          aux.push({
+            
+          }) 
+        });
+        console.log(res);
+      }
+    }
+    aux();
+  }, [account, contract]);
   
 	return (
     <WalletContext.Provider
       value={{
-        _id,
-        name,
-				phone,
-				money,
-				points,
-        setUserData,
-        signOut
+        metadatas
       }}>
       {children}
     </WalletContext.Provider>
   );
 }
 
-const useUserInfo = ()=>{
+const useWallet = ()=>{
   const context = useContext(WalletContext);
   if (context === undefined) {
-		throw new Error('useUserInfo must be used within an UserProvider')
+		throw new Error('useWallet must be used within an WalletProvider')
 	}
   return context;
 }
 	
-export {useUserInfo, WalletContext as UserInfoContext, WalletContextProvider as UserInfoContextProvider};
+export {useWallet, WalletContext, WalletContextProvider};

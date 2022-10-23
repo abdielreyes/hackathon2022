@@ -56,7 +56,7 @@ router.post('/redeemPromo',async(req,res)=>{
       res.status(400).send("Error redeeming promo")
     }
     console.log(doc)
-    res.status(200).send(doc)
+    res.status(200).send(doc.promos)
   })
   try {
     let resTx = await contract.redeem(tokenId, {gasLimit: 3500000});

@@ -13,6 +13,9 @@ module.exports = {
         'green-common': '#48AE64',
         'purple-rare': '#AD53A1',
         'yellow-epic': '#C49735'
+      },
+      fontFamily: {
+        sans: ['Libre Franklin']
       }
     },
   },

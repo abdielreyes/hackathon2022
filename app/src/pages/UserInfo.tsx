@@ -38,8 +38,8 @@ export default function UserInfo() {
 				<div className='text-white-2 text-center pt-10 text-xl'>
 					Hola, {name}
 				</div>
-				<div className='text-white-2 pt-10 ml-8 pb-3'>
-					MI INFORMACIÓN
+				<div className='text-white-2 pt-10 ml-8 pb-3 font-bold'>
+					Mi Información
 				</div>
 				<div className='text-white-2 flex flex-row space-x-5 ml-8'>
 					<span className='font-bold'>Dinero:</span>

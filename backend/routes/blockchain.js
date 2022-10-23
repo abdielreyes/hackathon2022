@@ -4,6 +4,7 @@ const abi = require('../ABI/ColeccionablesBBVA.json')
 const verify = require("../routes/verifyToken")
 const promos = require("../data/promos.json");
 const nftData = require("../data/NFTs.json");
+const addKey = require("../utils/metadataHandler");
 
 const providerRPC = {
     avalanche: {
@@ -37,6 +38,7 @@ router.post('/getContractInfo',verify,async (req,res)=>{
 router.post("/getNft", async (req, res) => {
   var rarity = "" + req.body.rarity;
   var ownerAddress = req.body.address;
+  var id = req.body.user_id;
   //validate user points
 
   //remove points from user account
@@ -73,8 +75,9 @@ router.post("/getNft", async (req, res) => {
   const receipt = await resTx.wait();
   const tokenId = receipt.events[1].args[1].toNumber()
   console.log(tokenId);
+
   //save new token metadata
-  writeFile(tokenId, promo.id, nft.nftId);
+  addKey(tokenId, promo.id, nft.nftId);
 
   const metadata = {
     ...nft,

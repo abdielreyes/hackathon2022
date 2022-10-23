@@ -2,7 +2,7 @@ import { ethers } from "hardhat";
 
 const address = '0x32C6038e04A9bE51Fe4feeAF30E0cE3847434EEf';
 
-let contractAddress = '0xb53A84Ae341fAFb1c7a77D695C70768428CE1e61'
+let contractAddress = '0xC412A0860A3106208E1Dd59592E8771F207e2862'
 
 
 describe("Deploy", function () {
@@ -56,7 +56,7 @@ describe.only("get uri", function () {
   it("get uri", async function () {
 		const contract = await ethers.getContractAt("ColeccionablesBBVA", contractAddress);
 		let res = await contract.tokenURI(0);
-		//let res = await contract.setBaseURI('http://52.188.108.125:8080/api/metadata/');
+		//let res = await contract.setBaseURI('http://52.188.108.125:8080/api/metadata/', {gasLimit: 3500000});
 		console.log(res);
   });
 });

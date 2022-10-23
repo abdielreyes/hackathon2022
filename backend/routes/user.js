@@ -3,7 +3,7 @@ const User = require("../models/user");
 const { registerValidation, loginValidation } = require("./validation");
 const bcrypt = require("bcryptjs");
 const jwt = require('jsonwebtoken');
-
+const verify = require("../routes/verifyToken")
 router.post("/register", async (req, res) => {
   console.log(req.body)
   const { error } = registerValidation(req.body);
@@ -29,7 +29,11 @@ router.post("/register", async (req, res) => {
   } catch (err) {
     res.status(400).send(err);
   }
-});
+})
+router.get('/getUser',verify,async(req,res)=>{
+  var doc =  User.findById(req.body.user_id)
+  res.status(200).send(doc)
+})
 
 router.post("/login", async (req, res) => {
   const { error } = loginValidation(req.body);

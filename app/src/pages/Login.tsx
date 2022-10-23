@@ -1,8 +1,6 @@
 import { useState } from 'react';
 import Button from '../components/Button';
-import Input from '../components/Input'
 import InputLogin from '../components/InputLogin';
-import Title from '../components/Title'
 import useAPI from '../hooks/useAPI';
 
 export default function Login() {

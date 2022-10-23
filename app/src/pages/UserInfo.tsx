@@ -33,33 +33,40 @@ export default function UserInfo() {
 	const {money, name, _id, points} = useUserInfo();
 	return (
 		<div className='flex flex-col'>
-			<section className='bg-bbva-blue-1'>
-				<div className='text-white-2 text-center'>
+			<section className='bg-bbva-blue-1 pb-5'>
+				<div className='text-white-2 text-center pt-10 text-xl'>
 					Hola, {name}
 				</div>
-				<Title label='Mi Info' />
-				<div className='text-white-2 flex flex-row space-x-5'>
-					<span>Dinero:</span>
+				<div className='text-white-2 pt-10 ml-8 pb-3'>
+					MI INFORMACIÓN
+				</div>
+				<div className='text-white-2 flex flex-row space-x-5 ml-8'>
+					<span className='font-bold'>Dinero:</span>
 					<span>{money}</span>
 				</div>
-				<div className='text-white-2 flex flex-row space-x-5'>
-					<span>Puntos:</span>
+				<div className='text-white-2 flex flex-row space-x-5 ml-8'>
+					<span className='font-bold'>Puntos:</span>
 					<span>{points}</span>
 				</div>
-				<div className='text-white-2 flex flex-row space-x-5'>
-					<span>id:</span>
+				<div className='text-white-2 flex flex-row space-x-5 ml-8'>
+					<span className='font-bold'>ID:</span>
 					<span>{_id}</span>
 				</div>
 			</section>
 			{account?
 				(
 					<>
-						<span className='text-xl font-bold'>Connected to metamask</span>
-						<Button label='Disconnect' onClick={disconnect} />
+					<div className='m-6 text-center'>
+						<span className='text-xl font-bold'>Conectado a Metamask</span>
+						<Button label='Desconectar' onClick={disconnect} />
+					</div>
+						
 					</>
 				)
 			:
-				<Button label='Connect Metamask' onClick={connect} />
+			<div className='m-6 text-center'>
+				<Button label='Conectar con Metamask' onClick={connect} />
+			</div>
 			}
 		</div>
 	)

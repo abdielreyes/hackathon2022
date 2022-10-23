@@ -1,6 +1,5 @@
 const router = require("express").Router();
 const User = require("../models/user");
-const { registerValidation, loginValidation } = require("./validation");
 const verify = require("../routes/verifyToken")
 
 const nftData = require("../data/NFTs.json")

@@ -4,6 +4,7 @@ const mongoose = require('mongoose');
 const cors = require('cors')
 const dotenv = require('dotenv')
 dotenv.config()
+const metadataRoutes = require('./routes/metadata')
 const userRoutes = require('./routes/user')
 const accountRoutes = require('./routes/account')
 const blockchainRoutes = require('./routes/blockchain')
@@ -30,6 +31,7 @@ const PORT = 8080
 app.get('/',(req,res)=>{
 	res.send("Hi!")
 })
+app.use('/api/metadata', metadataRoutes);
 app.use('/api/blockchain',blockchainRoutes);
 app.use('/api/user', userRoutes);
 app.use('/api/account',accountRoutes);

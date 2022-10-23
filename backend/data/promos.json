@@ -3,7 +3,7 @@
     "1": {
       "rarity": "1",
       "price": "8000",
-      "name": "Comun"
+      "name": "Común"
     },
     "2": {
       "rarity": "2",
@@ -13,7 +13,7 @@
     "3": {
       "rarity": "3",
       "price": "24000",
-      "name": "Epico"
+      "name": "Épico"
     }
   },
   "promos": {

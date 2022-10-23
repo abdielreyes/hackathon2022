@@ -3,6 +3,8 @@ const ethers = require('ethers')
 const abi = require('../ABI/ColeccionablesBBVA.json')
 const verify = require("../routes/verifyToken")
 const promos = require("../data/promos.json");
+const nftData = require("../data/NFTs.json");
+
 const providerRPC = {
     avalanche: {
       name: 'avalanche',
@@ -35,7 +37,11 @@ router.post('/getContractInfo',verify,async (req,res)=>{
 router.post("/getNft", async (req, res) => {
   var rarity = "" + req.body.rarity;
   var ownerAddress = req.body.address;
+  //validate user points
 
+  //remove points from user account
+
+  // random promo based on rarity
   let promosRarity = [];
   for (const key in promos.promos) {
     if (Object.hasOwnProperty.call(promos.promos, key)) {
@@ -46,23 +52,43 @@ router.post("/getNft", async (req, res) => {
     }
   }
   var promoLen = promosRarity.length;
-
-  console.log(promos.promoInfo);
-  console.log(rarity);
   var promo = {
     ...promosRarity[Math.floor(Math.random() * promoLen)],
     price: promos.promoInfo[rarity].price,
     name: promos.promoInfo[rarity].name
   };
   console.log(promo)
+
+  //random nft based on rarity
+  let nftsRarity = nftData.filter(nft => {
+    return nft.attributes[2].value==promos.promoInfo[rarity].name;
+  });
+  var nftsLen = nftsRarity.length;
+  var nft = {
+    ...nftsRarity[Math.floor(Math.random() * nftsLen)],
+  };
+  console.log(nft);
+  //mint nft
   let resTx = await contract.createCollectible(promo.id, ownerAddress, {gasLimit: 3500000});
-  console.log(resTx);
   const receipt = await resTx.wait();
   const tokenId = receipt.events[1].args[1].toNumber()
   console.log(tokenId);
+  //save new token metadata
+  writeFile(tokenId, promo.id, nft.nftId);
+
+  const metadata = {
+    ...nft,
+    head: nft.attributes[0].value,
+    body: nft.attributes[1].value,
+    rarity: nft.attributes[2].value,
+    tokenId,
+    promoId: promo.id,
+    promoDescription: promo.desc
+  };
 
   res.send({
-    tokenId
+    metadata,
+    receipt
   });
 });
 

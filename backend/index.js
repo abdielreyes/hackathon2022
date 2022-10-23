@@ -11,6 +11,7 @@ const cookieParser = require('cookie-parser')
 app.use(cookieParser())
 dotenv.config()
 app.use(express.json())
+app.use(express.urlencoded({extended:true}))
 app.use(cors());
 
 mongoose.connect(process.env.DB_CONNECT,(err)=>{ 

@@ -3,10 +3,14 @@ import "./styles/tailwind.css";
 import App from "./App";
 import * as serviceWorker from "./serviceWorker";
 import React from 'react';
+import { UserInfoContextProvider } from './contexts/UserInfo';
+
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
-    <App />
+      <UserInfoContextProvider>
+        <App />
+      </UserInfoContextProvider>
   </React.StrictMode>
 )
 

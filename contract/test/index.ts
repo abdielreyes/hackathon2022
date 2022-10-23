@@ -1,7 +1,9 @@
 import { ethers } from "hardhat";
 
 const address = '0x32C6038e04A9bE51Fe4feeAF30E0cE3847434EEf';
+
 let contractAddress = '0x99a416bE5b7d713842724C552f82C1A5851e5a1c'
+
 
 describe("Deploy", function () {
   it("Deploy", async function () {
@@ -37,6 +39,14 @@ describe("tokenURI", function () {
   it("tokenURI", async function () {
 		const contract = await ethers.getContractAt("ColeccionablesBBVA", contractAddress);
 		let res = await contract.tokenURI(0);
+		console.log(res);
+  });
+
+
+describe.only("mint", function () {
+  it("mint", async function () {
+		const contract = await ethers.getContractAt("ColeccionablesBBVA", contractAddress);
+		let res = await contract.createCollectible(2, address, {gasLimit: 3500000});
 		console.log(res);
   });
 });

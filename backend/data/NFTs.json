@@ -1,8 +1,8 @@
 [
     {
-        "image": "https://gateway.pinata.cloud/ipfs/0.png",
+        "image": "https://gateway.pinata.cloud/ipfs/QmYQFD6ju6US8PwHjUHBkvfyNkLVHuFFZvDGCqCTCoGd3M/0.png",
         "nftId": 0,
-        "name": "Coleccionables BBVA 0",
+        "name": "El Diablo",
         "attributes": [
             {
                 "trait_type": "Head",
@@ -13,17 +13,13 @@
                 "value": "Diablo"
             },
             {
-                "trait_type": "Wall",
-                "value": "Fondo"
-            },
-            {
                 "trait_type": "Rarity",
-                "value": ""
+                "value": "Épico"
             }
         ]
     },
     {
-        "image": "https://gateway.pinata.cloud/ipfs/1.png",
+        "image": "https://gateway.pinata.cloud/ipfs/QmYQFD6ju6US8PwHjUHBkvfyNkLVHuFFZvDGCqCTCoGd3M/1.png",
         "nftId": 1,
         "name": "Coleccionables BBVA 1",
         "attributes": [
@@ -36,17 +32,13 @@
                 "value": "Sirena"
             },
             {
-                "trait_type": "Wall",
-                "value": "Fondo"
-            },
-            {
                 "trait_type": "Rarity",
-                "value": ""
+                "value": "Raro"
             }
         ]
     },
     {
-        "image": "https://gateway.pinata.cloud/ipfs/2.png",
+        "image": "https://gateway.pinata.cloud/ipfs/QmYQFD6ju6US8PwHjUHBkvfyNkLVHuFFZvDGCqCTCoGd3M/2.png",
         "nftId": 2,
         "name": "Coleccionables BBVA 2",
         "attributes": [
@@ -59,17 +51,13 @@
                 "value": "Muerte"
             },
             {
-                "trait_type": "Wall",
-                "value": "Fondo"
-            },
-            {
                 "trait_type": "Rarity",
-                "value": ""
+                "value": "Común"
             }
         ]
     },
     {
-        "image": "https://gateway.pinata.cloud/ipfs/3.png",
+        "image": "https://gateway.pinata.cloud/ipfs/QmYQFD6ju6US8PwHjUHBkvfyNkLVHuFFZvDGCqCTCoGd3M/3.png",
         "nftId": 3,
         "name": "Coleccionables BBVA 3",
         "attributes": [
@@ -82,17 +70,13 @@
                 "value": "Borracho"
             },
             {
-                "trait_type": "Wall",
-                "value": "Fondo"
-            },
-            {
                 "trait_type": "Rarity",
-                "value": ""
+                "value": "Raro"
             }
         ]
     },
     {
-        "image": "https://gateway.pinata.cloud/ipfs/4.png",
+        "image": "https://gateway.pinata.cloud/ipfs/QmYQFD6ju6US8PwHjUHBkvfyNkLVHuFFZvDGCqCTCoGd3M/4.png",
         "nftId": 4,
         "name": "Coleccionables BBVA 4",
         "attributes": [
@@ -105,19 +89,15 @@
                 "value": "Diablo"
             },
             {
-                "trait_type": "Wall",
-                "value": "Fondo"
-            },
-            {
                 "trait_type": "Rarity",
-                "value": ""
+                "value": "Común"
             }
         ]
     },
     {
-        "image": "https://gateway.pinata.cloud/ipfs/5.png",
+        "image": "https://gateway.pinata.cloud/ipfs/QmYQFD6ju6US8PwHjUHBkvfyNkLVHuFFZvDGCqCTCoGd3M/5.png",
         "nftId": 5,
-        "name": "Coleccionables BBVA 5",
+        "name": "La Sirena",
         "attributes": [
             {
                 "trait_type": "Head",
@@ -128,17 +108,13 @@
                 "value": "Sirena"
             },
             {
-                "trait_type": "Wall",
-                "value": "Fondo"
-            },
-            {
                 "trait_type": "Rarity",
-                "value": ""
+                "value": "Épico"
             }
         ]
     },
     {
-        "image": "https://gateway.pinata.cloud/ipfs/6.png",
+        "image": "https://gateway.pinata.cloud/ipfs/QmYQFD6ju6US8PwHjUHBkvfyNkLVHuFFZvDGCqCTCoGd3M/6.png",
         "nftId": 6,
         "name": "Coleccionables BBVA 6",
         "attributes": [
@@ -151,17 +127,13 @@
                 "value": "Muerte"
             },
             {
-                "trait_type": "Wall",
-                "value": "Fondo"
-            },
-            {
                 "trait_type": "Rarity",
-                "value": ""
+                "value": "Común"
             }
         ]
     },
     {
-        "image": "https://gateway.pinata.cloud/ipfs/7.png",
+        "image": "https://gateway.pinata.cloud/ipfs/QmYQFD6ju6US8PwHjUHBkvfyNkLVHuFFZvDGCqCTCoGd3M/7.png",
         "nftId": 7,
         "name": "Coleccionables BBVA 7",
         "attributes": [
@@ -174,17 +146,13 @@
                 "value": "Borracho"
             },
             {
-                "trait_type": "Wall",
-                "value": "Fondo"
-            },
-            {
                 "trait_type": "Rarity",
-                "value": ""
+                "value": "Raro"
             }
         ]
     },
     {
-        "image": "https://gateway.pinata.cloud/ipfs/8.png",
+        "image": "https://gateway.pinata.cloud/ipfs/QmYQFD6ju6US8PwHjUHBkvfyNkLVHuFFZvDGCqCTCoGd3M/8.png",
         "nftId": 8,
         "name": "Coleccionables BBVA 8",
         "attributes": [
@@ -197,17 +165,13 @@
                 "value": "Diablo"
             },
             {
-                "trait_type": "Wall",
-                "value": "Fondo"
-            },
-            {
                 "trait_type": "Rarity",
-                "value": ""
+                "value": "Raro"
             }
         ]
     },
     {
-        "image": "https://gateway.pinata.cloud/ipfs/9.png",
+        "image": "https://gateway.pinata.cloud/ipfs/QmYQFD6ju6US8PwHjUHBkvfyNkLVHuFFZvDGCqCTCoGd3M/9.png",
         "nftId": 9,
         "name": "Coleccionables BBVA 9",
         "attributes": [
@@ -220,19 +184,15 @@
                 "value": "Sirena"
             },
             {
-                "trait_type": "Wall",
-                "value": "Fondo"
-            },
-            {
                 "trait_type": "Rarity",
-                "value": ""
+                "value": "Común"
             }
         ]
     },
     {
-        "image": "https://gateway.pinata.cloud/ipfs/10.png",
+        "image": "https://gateway.pinata.cloud/ipfs/QmYQFD6ju6US8PwHjUHBkvfyNkLVHuFFZvDGCqCTCoGd3M/10.png",
         "nftId": 10,
-        "name": "Coleccionables BBVA 10",
+        "name": "La Muerte",
         "attributes": [
             {
                 "trait_type": "Head",
@@ -243,17 +203,13 @@
                 "value": "Muerte"
             },
             {
-                "trait_type": "Wall",
-                "value": "Fondo"
-            },
-            {
                 "trait_type": "Rarity",
-                "value": ""
+                "value": "Épico"
             }
         ]
     },
     {
-        "image": "https://gateway.pinata.cloud/ipfs/11.png",
+        "image": "https://gateway.pinata.cloud/ipfs/QmYQFD6ju6US8PwHjUHBkvfyNkLVHuFFZvDGCqCTCoGd3M/11.png",
         "nftId": 11,
         "name": "Coleccionables BBVA 11",
         "attributes": [
@@ -266,17 +222,13 @@
                 "value": "Borracho"
             },
             {
-                "trait_type": "Wall",
-                "value": "Fondo"
-            },
-            {
                 "trait_type": "Rarity",
-                "value": ""
+                "value": "Común"
             }
         ]
     },
     {
-        "image": "https://gateway.pinata.cloud/ipfs/12.png",
+        "image": "https://gateway.pinata.cloud/ipfs/QmYQFD6ju6US8PwHjUHBkvfyNkLVHuFFZvDGCqCTCoGd3M/12.png",
         "nftId": 12,
         "name": "Coleccionables BBVA 12",
         "attributes": [
@@ -289,17 +241,13 @@
                 "value": "Diablo"
             },
             {
-                "trait_type": "Wall",
-                "value": "Fondo"
-            },
-            {
                 "trait_type": "Rarity",
-                "value": ""
+                "value": "Común"
             }
         ]
     },
     {
-        "image": "https://gateway.pinata.cloud/ipfs/13.png",
+        "image": "https://gateway.pinata.cloud/ipfs/QmYQFD6ju6US8PwHjUHBkvfyNkLVHuFFZvDGCqCTCoGd3M/13.png",
         "nftId": 13,
         "name": "Coleccionables BBVA 13",
         "attributes": [
@@ -312,17 +260,13 @@
                 "value": "Sirena"
             },
             {
-                "trait_type": "Wall",
-                "value": "Fondo"
-            },
-            {
                 "trait_type": "Rarity",
-                "value": ""
+                "value": "Común"
             }
         ]
     },
     {
-        "image": "https://gateway.pinata.cloud/ipfs/14.png",
+        "image": "https://gateway.pinata.cloud/ipfs/QmYQFD6ju6US8PwHjUHBkvfyNkLVHuFFZvDGCqCTCoGd3M/14.png",
         "nftId": 14,
         "name": "Coleccionables BBVA 14",
         "attributes": [
@@ -335,19 +279,15 @@
                 "value": "Muerte"
             },
             {
-                "trait_type": "Wall",
-                "value": "Fondo"
-            },
-            {
                 "trait_type": "Rarity",
-                "value": ""
+                "value": "Raro"
             }
         ]
     },
     {
-        "image": "https://gateway.pinata.cloud/ipfs/15.png",
+        "image": "https://gateway.pinata.cloud/ipfs/QmYQFD6ju6US8PwHjUHBkvfyNkLVHuFFZvDGCqCTCoGd3M/15.png",
         "nftId": 15,
-        "name": "Coleccionables BBVA 15",
+        "name": "El Borracho",
         "attributes": [
             {
                 "trait_type": "Head",
@@ -358,12 +298,8 @@
                 "value": "Borracho"
             },
             {
-                "trait_type": "Wall",
-                "value": "Fondo"
-            },
-            {
                 "trait_type": "Rarity",
-                "value": ""
+                "value": "Épico"
             }
         ]
     }

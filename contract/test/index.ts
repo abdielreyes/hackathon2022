@@ -40,7 +40,8 @@ describe("tokenURI", function () {
 		const contract = await ethers.getContractAt("ColeccionablesBBVA", contractAddress);
 		let res = await contract.tokenURI(0);
 		console.log(res);
-  });
+	});
+});
 
 
 describe.only("mint", function () {

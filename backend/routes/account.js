@@ -52,17 +52,5 @@ router.post("/faucetBalance", verify, async (req, res) => {
     }
   });
 });
-router.post("/get-nft", (req, res) => {
-  var rarity = "" + req.body.rarity;
-  var promoLen = promos.promos[rarity].length;
-
-  var promo = {
-    desc: promos.promos[rarity][Math.floor(Math.random() * promoLen)].desc,
-    price: promos.promoInfo[rarity].price,
-    name: promos.promoInfo[rarity].name
-  };
-  console.log(promo)
-  res.end();
-});
 
 module.exports = router;

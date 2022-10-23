@@ -1,5 +1,16 @@
 const mongoose = require("mongoose");
+const subPromoSchema = new mongoose.Schema({
+  tokenId:{
+    type:String
+  },
+  promoId:{
+    type:String
+  },
+  desc:{
+    type:String
+  }
 
+})
 const userSchema = new mongoose.Schema({
   name: {
     type: String,
@@ -33,7 +44,9 @@ const userSchema = new mongoose.Schema({
     type:Number,
     min:0,
     default: 0
-  }
+  },
+  promos:[subPromoSchema]
 });
+
 
 module.exports = mongoose.model("User", userSchema);

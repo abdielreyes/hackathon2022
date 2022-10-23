@@ -5,6 +5,8 @@ const verify = require("../routes/verifyToken")
 const promos = require("../data/promos.json");
 const nftData = require("../data/NFTs.json");
 const addKey = require("../utils/metadataHandler");
+const user = require("../models/user");
+const { getTokenInfo }= require("../utils/metadataHandler")
 
 const providerRPC = {
     avalanche: {
@@ -33,14 +35,33 @@ router.post('/getContractInfo',verify,async (req,res)=>{
   res.status(200).send(bn)
 });
 
+router.post('/redeemPromo',async(req,res)=>{
+  var id = req.body.user_id;
+  var tokenId = req.body.token_id;
+  let resTx = await contract.redeem(tokenId, {gasLimit: 3500000});
+  const receipt = await resTx.wait();
+  const tokenId = receipt.events[1].args[1].toNumber()
+  console.log(getTokenInfo(tokenId))
+})
+
 router.post("/getNft", async (req, res) => {
   var rarity = "" + req.body.rarity;
   var ownerAddress = req.body.address;
   var id = req.body.user_id;
   //validate user points
-
-  //remove points from user account
-
+  user.findOne({_id:id},(err,doc)=>{
+    if(err){
+      console.log(err);
+      res.status(400).send("Error getting user")
+    }else{
+      if(doc.points<=(8000*rarity)){
+        res.status(400).send("Not enough points to buy")
+      }else{
+      }
+      
+    }
+  })
+  
   // random promo based on rarity
   let promosRarity = [];
   for (const key in promos.promos) {
@@ -58,7 +79,7 @@ router.post("/getNft", async (req, res) => {
     name: promos.promoInfo[rarity].name
   };
   console.log(promo)
-
+  
   //random nft based on rarity
   let nftsRarity = nftData.filter(nft => {
     return nft.attributes[2].value==promos.promoInfo[rarity].name;
@@ -69,14 +90,14 @@ router.post("/getNft", async (req, res) => {
   };
   console.log(nft);
   //mint nft
-  let resTx = await contract.createCollectible(promo.id, ownerAddress, {gasLimit: 3500000});
+  let resTx = await contract.createCollectible(promo.id, user.id,ownerAddress, {gasLimit: 3500000});
   const receipt = await resTx.wait();
   const tokenId = receipt.events[1].args[1].toNumber()
   console.log(tokenId);
-
+  
   //save new token metadata
   addKey(tokenId, promo.id, nft.nftId);
-
+  
   const metadata = {
     ...nft,
     head: nft.attributes[0].value,
@@ -86,6 +107,12 @@ router.post("/getNft", async (req, res) => {
     promoId: promo.id,
     promoDescription: promo.desc
   };
+  user.findByIdAndUpdate(id,{$inc:(rarity*8000*-1)},(err,doc)=>{
+    if(err){
+      res.status(400).send("Error spenting points ")
+    }
+    console.log("Points spent!")
+  })
 
   res.send({
     metadata,

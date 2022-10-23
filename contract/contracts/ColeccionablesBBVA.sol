@@ -67,7 +67,6 @@ contract ColeccionablesBBVA is ERC721, ERC721URIStorage, Ownable {
         return collectibles[tokenId];
     }
 
-
     function _burn(uint256 tokenId) internal override(ERC721, ERC721URIStorage) {
         super._burn(tokenId);
     }

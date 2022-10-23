@@ -61,6 +61,7 @@ router.post('/redeemPromo',async(req,res)=>{
   try {
     let resTx = await contract.redeem(tokenId, {gasLimit: 3500000});
     const receipt = await resTx.wait();
+    console.log(receipt)
     const tokenId_res = receipt.events[1].args[1].toNumber()
     console.log(tokenId_res)
     

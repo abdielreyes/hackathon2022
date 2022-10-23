@@ -7,6 +7,8 @@ const nftData = require("../data/NFTs.json");
 const {addKey } = require("../utils/metadataHandler");
 const user = require("../models/user");
 const { getTokenInfo }= require("../utils/metadataHandler")
+const tokens = require('../data/tokens.json')
+
 
 const providerRPC = {
     avalanche: {
@@ -41,10 +43,31 @@ router.post('/getContractInfo',verify,async (req,res)=>{
 router.post('/redeemPromo',async(req,res)=>{
   var id = req.body.user_id;
   var tokenId = req.body.token_id;
-  let resTx = await contract.redeem(tokenId, {gasLimit: 3500000});
-  const receipt = await resTx.wait();
+  var promo_id = tokens[tokenId].promoId
+  var promo_desc = promos.promos[promo_id].desc
+  var promo = {
+    promoId:promo_id,
+    tokenId:tokenId,
+    desc:promo_desc
+  }
+  console.log(promo)
+  user.findByIdAndUpdate(id,{$push:{promos:promo}},(err,doc)=>{
+    if(err){
+      res.status(400).send("Error redeeming promo")
+    }
+    console.log(doc)
+    res.status(200).send(doc)
+  })
+  try {
+    let resTx = await contract.redeem(tokenId, {gasLimit: 3500000});
+    const receipt = await resTx.wait();
+    const tokenId_res = receipt.events[1].args[1].toNumber()
+    console.log(tokenId_res)
+    
+  } catch (error) {
+    console.log(error)  
+  }
   //const tokenId = receipt.events[1].args[1].toNumber()
-  console.log(getTokenInfo(tokenId))
 })
 
 router.post("/getNft", async (req, res) => {

@@ -8,9 +8,7 @@ import { UserInfoContextProvider } from './contexts/UserInfoContext';
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
-      <UserInfoContextProvider>
-        <App />
-      </UserInfoContextProvider>
+    <App />
   </React.StrictMode>
 )
 

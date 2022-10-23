@@ -49,10 +49,6 @@ export default function UserInfo() {
 					<span className='font-bold'>Puntos:</span>
 					<span>{points}</span>
 				</div>
-				<div className='text-white-2 flex flex-row space-x-5 ml-8'>
-					<span className='font-bold'>ID:</span>
-					<span>{_id}</span>
-				</div>
 			</section>
 			<section className='text-center'>
 				<TestCard label='' >

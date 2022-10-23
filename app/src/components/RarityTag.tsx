@@ -1,18 +1,18 @@
 interface SubtitleProps {
-  rarity: 'common' | 'rare' | 'epic'
+  rarity: string
 }
 
 export default function RarityTag({rarity}:SubtitleProps) {
-  const rarityTranslate = {
-    'common': {
+  const rarityTranslate:any = {
+    'Común': {
       label:'Común',
       color: 'bg-green-common'
     },
-    'rare': {
+    'Raro': {
       label:'Raro',
       color: 'bg-purple-rare'
     },
-    'epic': {
+    'Épico': {
       label:'Épico',
       color: 'bg-yellow-epic'
     },

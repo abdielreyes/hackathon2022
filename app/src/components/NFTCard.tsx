@@ -8,7 +8,7 @@ interface NFTCardProps {
   tokenId:string
   name:string
   src: string
-  rarity: 'common' | 'rare' | 'epic'
+  rarity: string
 }
 
 export default function NFTCard({
@@ -24,13 +24,10 @@ export default function NFTCard({
           <img src={src} alt='NFT' className='w-full h-full' />
         </div>
         <Subtitle label={name} />
-        <div className='flex flex-col'>
+        <div className='flex flex-col -mt-2 pb-2'>
           <span className='flex flex-col justify-between'>
             <RarityTag rarity={rarity}/>
           </span>
-          <span className='my-4'>
-            <Button label='Canjear'/> 
-          </span>      
         </div>
       </div>
     </Link>

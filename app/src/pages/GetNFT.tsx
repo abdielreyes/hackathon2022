@@ -7,7 +7,6 @@ export default function GetNFT() {
 	const {getNFT} = useAPI();
 	const onGetNFT = (rarity: number)=>{
 		getNFT(rarity).then((data)=>{
-			console.log(data);
 		});
 	}
 	return (

@@ -1,9 +1,13 @@
+import { useWeb3React } from '@web3-react/core';
 import axios from 'axios';
 import { useUserInfo } from '../contexts/UserInfoContext';
+import { useWallet } from '../contexts/WalletContext';
 
 const API_URL = 'http://52.188.108.125:8080/api';
 
 export default function useAPI() {
+  const {refreshWallet} = useWallet();
+  const {account} = useWeb3React();
   const {setUserData, _id} = useUserInfo();
   const login = async (phone: string, password: string)=>{
     return axios.post(`${API_URL}/user/login`, {
@@ -29,6 +33,14 @@ export default function useAPI() {
 
   const getUser = async (id: string)=>{
     return axios.get(`${API_URL}/user/getUser?user_id=${id}`).then( (res) => {
+      return res.data;
+    }).catch( (error) => {
+      throw error.response.data.message;
+    });
+  };
+
+  const getMetadata = async (id: string)=>{
+    return axios.get(`${API_URL}/metadata/${id}`).then( (res) => {
       return res.data;
     }).catch( (error) => {
       throw error.response.data.message;
@@ -78,19 +90,27 @@ export default function useAPI() {
   };
 
   const getNFT = async (rarity: number)=>{
-    return axios.post(`${API_URL}/api/account/get-nft`, {
+    return axios.post(`${API_URL}/blockchain/getNft`, {
       user_id: _id,
+      address: account,
       rarity,
     }).then( (res) => {
-      const data = res.data.data;
-			/*
-      setStudentData({
-        name,
-        schoolName: data.school_name,
-        grade: calculateGrade(data.school_year),
-      });
-			*/
-      return res.data;
+      const data = res.data;
+			refreshWallet();
+      return data;
+    }).catch( (error) => {
+      throw error.response.data.message;
+    });
+  };
+
+  const redeemPromo = async (tokenId: string)=>{
+    return axios.post(`${API_URL}/blockchain/redeemPromo`, {
+      user_id: _id,
+      token_id: tokenId,
+    }).then( (res) => {
+      const data = res.data;
+			refreshWallet();
+      return data;
     }).catch( (error) => {
       throw error.response.data.message;
     });
@@ -101,6 +121,8 @@ export default function useAPI() {
     faucet,
     purchase,
     getUser,
-    getNFT
+    getNFT,
+    getMetadata,
+    redeemPromo
   };
 }

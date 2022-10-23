@@ -30,9 +30,12 @@ router.post("/register", async (req, res) => {
     res.status(400).send(err);
   }
 })
-router.get('/getUser',verify,async(req,res)=>{
-  var doc =  User.findById(req.query.user_id)
-  res.status(200).send(doc)
+router.get('/getUser',async(req,res)=>{
+  var doc = await  User.findById(req.query.user_id)
+  if(doc){
+    res.status(200).send(doc)
+
+  }
 })
 
 router.post("/login", async (req, res) => {

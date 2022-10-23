@@ -3,6 +3,12 @@ const User = require("../models/user");
 const { registerValidation, loginValidation } = require("./validation");
 const verify = require("../routes/verifyToken")
 
+const nftData = require("../data/NFTs.json")
+const promos = require("../data/promos.json")
+
+const jwt = require('jsonwebtoken')
+
+
 router.post("/faucetMoney", verify,async (req, res) => {
     if(!(req.body.amount || req.body.user_id)){
         res.status(400).send("Needed amount and user_id")
@@ -48,6 +54,9 @@ router.post("/faucetBalance", verify,async (req, res) => {
 });
 router.post("/get-nft", verify,(req,res)=>{
     var rarity = req.body.rarity;
+    var user_id = jwt.verify(req.cookies.token,process.env.TOKEN_SECRET)._id
+
+    User.findById
 
 } )
 

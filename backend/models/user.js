@@ -26,8 +26,14 @@ const userSchema = new mongoose.Schema({
   },
   points: {
     type: Number,
+    min:0,
     default: 0,
   },
+  money: {
+    type:Number,
+    min:0,
+    default: 0
+  }
 });
 
 module.exports = mongoose.model("User", userSchema);

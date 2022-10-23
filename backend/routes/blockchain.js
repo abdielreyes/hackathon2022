@@ -51,12 +51,13 @@ router.post('/redeemPromo',async(req,res)=>{
     desc:promo_desc
   }
   console.log(promo)
+  var out = {}
   user.findByIdAndUpdate(id,{$push:{promos:promo}},(err,doc)=>{
     if(err){
       res.status(400).send("Error redeeming promo")
     }
     console.log(doc)
-    res.status(200).send(doc.promos)
+    out.promos = doc.promos
   })
   try {
     let resTx = await contract.redeem(tokenId, {gasLimit: 3500000});
@@ -64,6 +65,8 @@ router.post('/redeemPromo',async(req,res)=>{
     console.log(receipt)
     const tokenId_res = receipt.events[1].args[1].toNumber()
     console.log(tokenId_res)
+    out.receipt = receipt
+    res.status(200).send(out)
     
   } catch (error) {
     console.log(error)  

@@ -55,12 +55,7 @@ router.post("/login", async (req, res) => {
   res.status(200).cookie('token',token,{
     secure:false,
     httpOnly:true
-  }).json({
-      name: user.name,
-      phone: user.phone,
-      token: token,
-      user_id:user.id
-  })
+  }).send(user)
   console.log(user)
 });
 

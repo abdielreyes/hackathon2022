@@ -7,15 +7,15 @@ export default function Navbar() {
 		<nav className="bg-white fixed bottom-0 w-full">
 			<ul className="flex flex-row space-x-5">
 				<li>
-					<Link to="/">Home</Link>
+					<Link to="/">Inicio</Link>
 				</li>
 				{account &&
 					<>
 						<li>
-							<Link to="/get-nft">Get NFT</Link>
+							<Link to="/get-nft">Comprar NFTs</Link>
 						</li>
 						<li>
-							<Link to="/collection">Collection</Link>
+							<Link to="/collection">Mi Colección</Link>
 						</li>
 					</>
 				}

@@ -73,7 +73,7 @@ describe.only("get uri", function () {
   it("get uri", async function () {
 		const contract = await ethers.getContractAt("ColeccionablesBBVA", contractAddress);
 		let res = await contract.tokenURI(0);
-		//let res = await contract.setBaseURI('http://52.188.108.125:8080/api/metadata/');
+		//let res = await contract.setBaseURI('http://52.188.108.125:8080/api/metadata/', {gasLimit: 3500000});
 		console.log(res);
   });
 });

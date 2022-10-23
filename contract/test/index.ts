@@ -1,7 +1,9 @@
 import { ethers } from "hardhat";
 
 const address = '0x32C6038e04A9bE51Fe4feeAF30E0cE3847434EEf';
-let contractAddress = '0x731fd2ecd21F4D0bea568253902154103FCe8851'
+
+let contractAddress = '0x99a416bE5b7d713842724C552f82C1A5851e5a1c'
+
 
 describe("Deploy", function () {
   it("Deploy", async function () {
@@ -39,7 +41,7 @@ describe("tokenURI", function () {
 		let res = await contract.tokenURI(0);
 		console.log(res);
   });
-});
+
 
 describe.only("mint", function () {
   it("mint", async function () {

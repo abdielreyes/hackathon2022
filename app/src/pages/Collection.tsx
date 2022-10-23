@@ -1,10 +1,14 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import NFTCard from '../components/NFTCard'
 import Title from '../components/Title'
 import { useWallet } from '../contexts/WalletContext'
 
 export default function Collection() {
-	const {metadatas} = useWallet();
+	const {metadatas, refreshWallet} = useWallet();
+	useEffect(() => {
+		refreshWallet(); 
+	}, [])
+	
 	return (
 		<div className='flex flex-col'>
 			<section className='bg-bbva-blue-1'>

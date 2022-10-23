@@ -90,13 +90,13 @@ export default function useAPI() {
   };
 
   const getNFT = async (rarity: number)=>{
-    return axios.post(`${API_URL}/blockchain/getNft`, {
+    return await axios.post(`${API_URL}/blockchain/getNft`, {
       user_id: _id,
       address: account,
       rarity,
-    }).then( (res) => {
+    }).then(async (res) => {
       const data = res.data;
-			refreshWallet();
+			await refreshWallet();
       return data;
     }).catch( (error) => {
       throw error.response.data.message;

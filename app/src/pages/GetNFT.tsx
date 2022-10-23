@@ -1,16 +1,26 @@
+import { useState } from 'react';
 import Button from '../components/Button'
+import LoadingModal from '../components/LoadingModal';
 import TestCard from '../components/TestCard';
 import Title from '../components/Title'
 import useAPI from '../hooks/useAPI'
 
 export default function GetNFT() {
+	const [loading, setLoading] = useState(false);
 	const {getNFT} = useAPI();
 	const onGetNFT = (rarity: number)=>{
+		setLoading(true);
 		getNFT(rarity).then((data)=>{
+			setLoading(false);
+		}).finally(()=>{
+			setLoading(false);
 		});
 	}
 	return (
 		<div className='flex flex-col'>
+			{loading && 
+				<LoadingModal />
+			}
 			<section className='bg-bbva-blue-1'>
 				<Title label='Marketplace' />
 			</section>

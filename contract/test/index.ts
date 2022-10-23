@@ -41,7 +41,7 @@ describe("tokenURI", function () {
   });
 });
 
-describe.only("mint", function () {
+describe("mint", function () {
   it("mint", async function () {
 		const contract = await ethers.getContractAt("ColeccionablesBBVA", contractAddress);
 		let res = await contract.createCollectible(2, address, {gasLimit: 3500000});

@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "deploy": "npx hardhat run scripts/deploy.ts",
+    "deploy": "npx hardhat run scripts/deploy.ts --network fuji",
     "export-abi": "npx hardhat export-abi"
   },
   "author": "",
